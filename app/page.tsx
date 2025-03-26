@@ -141,14 +141,13 @@ export default function DonBrosLanding() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="tokenomics-chart relative">
-              <div className="aspect-square w-full max-w-md mx-auto bg-indigo-900/60 rounded-full overflow-hidden border-4 border-cyan-500/50 neon-box">
-                <div className="absolute inset-0 bg-green-500/90 rounded-full flex items-center justify-center text-center p-8">
-                  <div>
-                    <p className="text-2xl font-bold">100%</p>
-                    <p className="text-xl">Liquidity</p>
-                  </div>
-                </div>
-              </div>
+            <div className="tokenomics-chart relative flex justify-center items-center">
+  <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] bg-green-500/90 rounded-full border-4 border-cyan-500/50 neon-box flex flex-col justify-center items-center text-center p-8">
+    <p className="text-4xl md:text-5xl font-bold">100%</p>
+    <p className="text-2xl md:text-3xl">Liquidity</p>
+  </div>
+</div>
+
             </div>
 
             <div className="space-y-6">
