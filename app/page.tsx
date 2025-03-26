@@ -542,16 +542,5 @@ export default function DonBrosLanding() {
       </footer>
     </div>
   )
-  export default function DonBrosLandingPage() {
-    return (
-      <div className="bg-black text-white">
-        <AudioPlayer src="/audio/Pixelated Dreams.mp3" />
-        <Tokenomics />
-        <Roadmap />
-        <DexSection />
-        <Community />
-        <Footer />
-      </div>
-    )
   }  
 }
