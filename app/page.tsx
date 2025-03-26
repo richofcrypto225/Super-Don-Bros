@@ -1,12 +1,12 @@
 "use client"
-"trigger redeploy"
+
 import { useEffect, useState, useRef } from "react"
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowDown, ExternalLink, Flame, Gamepad2, Rocket, Trophy, Users } from "lucide-react"
+import { ArrowDown } from "lucide-react"
 import { motion } from "framer-motion"
 import { VideoPlayer } from "@/components/video-player"
 import { AudioPlayer } from "@/components/audio-player"
+import { Tokenomics, Roadmap, DexSection, Community, Footer } from "./DonBrosLandingFix"
 
 export default function DonBrosLanding() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -15,52 +15,30 @@ export default function DonBrosLanding() {
   const videoRef = useRef<HTMLDivElement>(null)
 
   const videos = [
-    {
-      src: "/videos/hero.mp4",
-      title: "Super Don Bro in Action",
-    },
-    {
-      src: "/videos/plaza.mp4",
-      title: "The Lonely Plaza",
-    },
-    {
-      src: "/videos/pointing.mp4",
-      title: "Super Don Bro WINNING",
-    },
-    {
-      src: "/videos/alley.mp4",
-      title: "Neon Alley Adventures",
-    }
+    { src: "/videos/hero.mp4", title: "Super Don Bro in Action" },
+    { src: "/videos/plaza.mp4", title: "The Lonely Plaza" },
+    { src: "/videos/pointing.mp4", title: "Super Don Bro WINNING" },
+    { src: "/videos/alley.mp4", title: "Neon Alley Adventures" }
   ];
 
   useEffect(() => {
     setIsLoaded(true)
 
-    const createCoins = () => {
-      const coinContainer = document.querySelector(".coin-container")
-      if (!coinContainer) return
+    const coinContainer = document.querySelector(".coin-container")
+    if (!coinContainer) return
 
-      for (let i = 0; i < 15; i++) {
-        const coin = document.createElement("div")
-        coin.className = "pixel-coin"
-        coin.style.left = `${Math.random() * 100}%`
-        coin.style.top = `${Math.random() * 100}%`
-        coin.style.animationDelay = `${Math.random() * 5}s`
-        
-        coinContainer.appendChild(coin)
-      }
+    for (let i = 0; i < 15; i++) {
+      const coin = document.createElement("div")
+      coin.className = "pixel-coin"
+      coin.style.left = `${Math.random() * 100}%`
+      coin.style.top = `${Math.random() * 100}%`
+      coin.style.animationDelay = `${Math.random() * 5}s`
+      coinContainer.appendChild(coin)
     }
-
-    createCoins()
   }, [])
 
-  const scrollToDex = () => {
-    dexRef.current?.scrollIntoView({ behavior: "smooth" })
-  }
-
-  const scrollToVideos = () => {
-    videoRef.current?.scrollIntoView({ behavior: "smooth" })
-  }
+  const scrollToDex = () => dexRef.current?.scrollIntoView({ behavior: "smooth" })
+  const scrollToVideos = () => videoRef.current?.scrollIntoView({ behavior: "smooth" })
 
   return (
     <div className="min-h-screen bg-black text-white font-pixel relative overflow-hidden">
@@ -68,20 +46,11 @@ export default function DonBrosLanding() {
 
       {/* Hero Section */}
       <section className="relative z-30 min-h-screen flex flex-col items-center justify-center px-4 pt-20 pb-32">
-        {/* Hero Background Video */}
         <div className="absolute inset-0 z-0 overflow-hidden">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-            src="/videos/hero.mp4"
-          />
+          <video autoPlay loop muted playsInline className="w-full h-full object-cover" src="/videos/hero.mp4" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80"></div>
         </div>
 
-        {/* Floating coins effect */}
         <div className="coin-container absolute inset-0 z-10 overflow-hidden"></div>
 
         <motion.div
@@ -90,7 +59,6 @@ export default function DonBrosLanding() {
           transition={{ duration: 0.5 }}
           className="text-center relative z-20 mt-[-50px]"
         >
-          {/* Super Don Bros Logo */}
           <div className="logo-container relative mx-auto mb-8 w-full max-w-2xl">
             <div className="absolute -inset-10 bg-gradient-to-r from-blue-900/30 via-yellow-500/20 to-blue-900/30 rounded-full blur-3xl animate-pulse-slow"></div>
             <motion.div
@@ -99,11 +67,7 @@ export default function DonBrosLanding() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="relative"
             >
-              <img
-                src="/images/super-don-bros-logo.png"
-                alt="Super Don Bros Logo"
-                className="w-full h-auto drop-shadow-[0_0_15px_rgba(0,100,255,0.7)] animate-float"
-              />
+              <img src="/images/super-don-bros-logo.png" alt="Super Don Bros Logo" className="w-full h-auto drop-shadow-[0_0_15px_rgba(0,100,255,0.7)] animate-float" />
             </motion.div>
           </div>
 
@@ -121,7 +85,6 @@ export default function DonBrosLanding() {
             >
               Get $DONBROS Now <ArrowDown className="ml-2 h-5 w-5" />
             </Button>
-
             <Button
               onClick={scrollToVideos}
               className="bg-blue-600 hover:bg-blue-500 text-white text-xl px-8 py-6 rounded-xl font-bold transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(0,100,255,0.6)]"
@@ -136,30 +99,26 @@ export default function DonBrosLanding() {
         </div>
       </section>
 
-      {/* Video Showcase Section */}
+      {/* Video Section */}
       <section ref={videoRef} className="relative z-30 py-20 px-4 bg-black/90">
-        <div className="grid-background absolute inset-0 opacity-20"></div>
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-2 text-center text-yellow-300 neon-text">SUPER DON BROS UNIVERSE</h2>
           <p className="text-center mb-12 text-cyan-300">Explore the pixel world of adventure</p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Featured Video */}
             <div className="lg:col-span-2">
               <VideoPlayer
                 src={videos[activeVideoIndex].src}
                 title={videos[activeVideoIndex].title}
-                autoPlay={true}
+                autoPlay
                 className="aspect-video w-full shadow-[0_0_30px_rgba(0,100,255,0.4)]"
               />
             </div>
-
-            {/* Video Thumbnails */}
             <div className="grid grid-cols-2 md:grid-cols-4 lg:col-span-2 gap-4">
               {videos.map((video, index) => (
                 <div
                   key={index}
-                  className={cursor-pointer transition-all duration-300 transform ${activeVideoIndex === index ? "scale-105 ring-4 ring-yellow-400" : "scale-100 hover:scale-105"} rounded-lg overflow-hidden}
+                  className={`cursor-pointer transition-all duration-300 transform ${activeVideoIndex === index ? "scale-105 ring-4 ring-yellow-400" : "scale-100 hover:scale-105"} rounded-lg overflow-hidden`}
                   onClick={() => setActiveVideoIndex(index)}
                 >
                   <video src={video.src} muted loop autoPlay playsInline className="w-full aspect-video object-cover" />
