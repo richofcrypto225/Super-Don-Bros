@@ -43,6 +43,7 @@ export default function DonBrosLanding() {
       coin.style.left = `${Math.random() * 100}%`
       coin.style.top = `${Math.random() * 100}%`
       coin.style.animationDelay = `${Math.random() * 5}s`
+      
       coinContainer.appendChild(coin)
     }
   }, [])
