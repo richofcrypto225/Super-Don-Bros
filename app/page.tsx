@@ -43,9 +43,10 @@ export default function DonBrosLanding() {
       for (let i = 0; i < 15; i++) {
         const coin = document.createElement("div")
         coin.className = "pixel-coin"
-        coin.style.left = ${Math.random() * 100}%
-        coin.style.top = ${Math.random() * 100}%
-        coin.style.animationDelay = ${Math.random() * 5}s
+        coin.style.left = `${Math.random() * 100}%`
+        coin.style.top = `${Math.random() * 100}%`
+        coin.style.animationDelay = `${Math.random() * 5}s`
+        
         coinContainer.appendChild(coin)
       }
     }
