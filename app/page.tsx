@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowDown, Flame } from "lucide-react"
+import { ArrowDown, Flame, Rocket, Trophy, Gamepad2, Users } from "lucide-react"
 import { motion } from "framer-motion"
 import { VideoPlayer } from "@/components/video-player"
 import { AudioPlayer } from "@/components/audio-player"
