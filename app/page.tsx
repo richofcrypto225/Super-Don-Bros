@@ -1,5 +1,4 @@
 "use client"
-// Trigger redeploy
 
 import { useEffect, useState, useRef } from "react"
 import Link from "next/link"
@@ -32,14 +31,11 @@ export default function DonBrosLanding() {
       src: "/videos/alley.mp4",
       title: "Neon Alley Adventures",
     }
-  ]
-  
-  ]
+  ];
 
   useEffect(() => {
     setIsLoaded(true)
 
-    // Create floating coins
     const createCoins = () => {
       const coinContainer = document.querySelector(".coin-container")
       if (!coinContainer) return
@@ -67,7 +63,6 @@ export default function DonBrosLanding() {
 
   return (
     <div className="min-h-screen bg-black text-white font-pixel relative overflow-hidden">
-      {/* Background Music Player */}
       <AudioPlayer src="/audio/Pixelated Dreams.mp3" />
 
       {/* Hero Section */}
