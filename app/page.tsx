@@ -16,19 +16,19 @@ export default function DonBrosLanding() {
 
   const videos = [
     {
-      src: "/videos/super-don-bro-center.mp4",
+      src: "/public/videos/hero.mp4",
       title: "Super Don Bro in Action",
     },
     {
-      src: "/videos/lonely-plaza.mp4",
+      src: "/public/videos/Plaza.mp4",
       title: "The Lonely Plaza",
     },
     {
-      src: "/videos/super-don-bro-dim.mp4",
-      title: "Super Don Bro in the Shadows",
+      src: "/public/videos/pointing.mp4",
+      title: "Super Don Bro WINNING",
     },
     {
-      src: "/videos/neon-alley.mp4",
+      src: "/public/videos/alley.mp4",
       title: "Neon Alley Adventures",
     },
   ]
@@ -65,7 +65,7 @@ export default function DonBrosLanding() {
   return (
     <div className="min-h-screen bg-black text-white font-pixel relative overflow-hidden">
       {/* Background Music Player */}
-      <AudioPlayer src="/audio/pixelated-dreams.mp3" />
+      <AudioPlayer src="/public/audio/Pixelated Dreams.mp3" />
 
       {/* Hero Section */}
       <section className="relative z-30 min-h-screen flex flex-col items-center justify-center px-4 pt-20 pb-32">
@@ -77,7 +77,7 @@ export default function DonBrosLanding() {
             muted
             playsInline
             className="w-full h-full object-cover"
-            src="/videos/super-don-bro-center.mp4"
+            src="/public/videos/hero.mp4"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80"></div>
         </div>
