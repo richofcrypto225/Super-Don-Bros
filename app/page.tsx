@@ -17,7 +17,7 @@ export default function DonBrosLanding() {
 
   const videos = [
     { src: "/videos/hero.mp4", title: "Super Don Bro in Action" },
-    { src: "/videos/hero.mp4", title: "The Lonely Plaza" },
+    { src: "/videos/plaza.mp4", title: "The Lonely Plaza" },
     { src: "/videos/pointing.mp4", title: "Super Don Bro WINNING" },
     { src: "/videos/alley.mp4", title: "Neon Alley Adventures" }
   ];
